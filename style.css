@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Validación QR</title>
-  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Validación de Códigos QR</h1>
-  <div id="reader" style="width:300px;"></div>
-  <p id="result"></p>
-  <script src="script.js"></script>
-</body>
-</html>
+/* Botón de activar cámara */
+#activate-camera {
+  background-color: #4CAF50; /* Verde */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px auto;
+  cursor: pointer;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Efecto hover */
+#activate-camera:hover {
+  background-color: #45a049; /* Verde más oscuro cuando pasas el mouse */
+}
