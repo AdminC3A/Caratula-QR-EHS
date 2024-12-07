@@ -15,3 +15,27 @@ scanner.render(
     console.error("Error de cámara:", errorMessage);
   }
 );
+function startCamera() {
+  const scanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+  scanner.render(
+    (decodedText) => {
+      validateCode(decodedText);
+    },
+    (errorMessage) => {
+      console.error("Error de cámara:", errorMessage);
+    }
+  );
+  document.getElementById("activate-camera").style.display = "none"; // Oculta el botón después de activarlo
+}
+
+// Muestra el botón si hay un error en la cámara automáticamente
+scanner.render(
+  (decodedText) => {
+    validateCode(decodedText); // Procesa el QR escaneado
+  },
+  (errorMessage) => {
+    document.getElementById("camera-error").style.display = "block"; // Muestra el mensaje de error
+    document.getElementById("activate-camera").style.display = "inline-block"; // Muestra el botón
+    console.error("Error de cámara:", errorMessage);
+  }
+);
