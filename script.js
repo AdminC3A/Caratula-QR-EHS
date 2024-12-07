@@ -5,6 +5,13 @@ async function validateCode(decodedText) {
 }
 
 const scanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
-scanner.render((decodedText) => {
-  validateCode(decodedText);
-});
+
+scanner.render(
+  (decodedText) => {
+    validateCode(decodedText); // Llama a la función para validar el código
+  },
+  (errorMessage) => {
+    document.getElementById("camera-error").style.display = "block";
+    console.error("Error de cámara:", errorMessage);
+  }
+);
