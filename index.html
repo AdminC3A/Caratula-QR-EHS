@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Validación QR</title>
-  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <!-- Incluye la librería desde un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.0.0/dist/html5-qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Validación de Códigos QR</h1>
-  <div id="reader" style="width:300px;"></div>
-  <button id="activate-camera" onclick="startCamera()" style="display:inline-block;">Activar Cámara</button>
-  <p id="camera-error" style="color:red; display:none;">No se pudo acceder a la cámara. Verifica los permisos.</p>
-  <p id="result">Resultado aquí</p>
-  <script src="script.js"></script>
+    <h1>Validación de Códigos QR</h1>
+    <div id="reader" style="width: 300px;"></div>
+    <button id="activate-camera" onclick="startCamera()">Activar Cámara</button>
+    <p id="camera-error" style="color:red; display:none;">No se pudo acceder a la cámara. Verifica los permisos.</p>
+    <p id="result">Resultado aquí</p>
+
+    <script src="script.js"></script>
 </body>
 </html>
