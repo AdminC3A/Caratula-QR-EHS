@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Scanner</title>
-    <!-- Incluye la librería desde un CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.0.0/dist/html5-qrcode.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <title>Escáner de Códigos QR</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 </head>
 <body>
-    <h1>Validación de Códigos QR</h1>
-    <div id="reader" style="width: 300px;"></div>
-    <button id="activate-camera" onclick="startCamera()">Activar Cámara</button>
-    <p id="camera-error" style="color:red; display:none;">No se pudo acceder a la cámara. Verifica los permisos.</p>
-    <p id="result">Resultado aquí</p>
-
+    <header>
+        <h1>Escáner de Códigos QR</h1>
+    </header>
+    <main>
+        <div id="reader" class="qr-reader"></div>
+        <div id="result" class="result-container">
+            <h2>Resultado del Escaneo:</h2>
+            <p id="scan-result">Aún no se ha escaneado ningún código.</p>
+        </div>
+    </main>
+    <footer>
+        <p>Desarrollado con ♥ usando <a href="https://github.com/mebjas/html5-qrcode" target="_blank">html5-qrcode</a></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
