@@ -1,7 +1,6 @@
+
 /* General styles */
 body {
-  margin: 0; /* no unit */
-  padding: 0; /* no unit */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -12,10 +11,6 @@ body {
     color: #333333;
 }
 
-.header {
-  padding: 10px;
-  background: black;
-  color: white;
 header, footer {
     background-color: #333333;
     color: #ffffff;
@@ -24,13 +19,12 @@ header, footer {
     padding: 15px 0;
 }
 
-.section {
-  padding: auto;
 header h1 {
     margin: 0;
     font-size: 24px;
     letter-spacing: 1px;
 }
+
 main {
     flex: 1;
     display: flex;
@@ -41,18 +35,21 @@ main {
     max-width: 600px;
     width: 100%;
 }
+
 #reader {
     width: 300px;
     height: 300px;
     border: 2px solid #333333;
     margin-top: 20px;
 }
+
 #result {
     margin-top: 20px;
     font-size: 16px;
     text-align: center;
     color: #555555;
 }
+
 footer p {
     margin: 0;
     font-size: 14px;
