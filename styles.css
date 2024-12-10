@@ -1,57 +1,59 @@
-/* Estilos generales para el cuerpo de la página */
+/* General styles */
 body {
+  margin: 0; /* no unit */
+  padding: 0; /* no unit */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    color: #333333;
 }
 
-/* Estilos para el encabezado */
-header {
-    background-color: #4CAF50;
-    width: 100%;
-    padding: 1rem 0;
+.header {
+  padding: 10px;
+  background: black;
+  color: white;
+header, footer {
+    background-color: #333333;
+    color: #ffffff;
     text-align: center;
-    color: white;
+    width: 100%;
+    padding: 15px 0;
 }
 
-/* Estilos para el contenido principal */
+.section {
+  padding: auto;
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
 main {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-/* Estilos para el contenedor del escáner */
-.qr-reader {
-    width: 300px;
-    margin: 1rem 0;
-}
-
-/* Estilos para la sección de resultados */
-.result-container {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-/* Estilos para el pie de página */
-footer {
-    background-color: #333;
+    padding: 20px;
+    max-width: 600px;
     width: 100%;
-    padding: 0.5rem 0;
-    text-align: center;
-    color: white;
 }
-
-/* Estilos para los enlaces en el pie de página */
-footer a {
-    color: #FFD700;
-    text-decoration: none;
+#reader {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #333333;
+    margin-top: 20px;
+}
+#result {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #555555;
+}
+footer p {
+    margin: 0;
+    font-size: 14px;
 }
