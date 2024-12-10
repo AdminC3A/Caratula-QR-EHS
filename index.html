@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escáner de Códigos QR</title>
+    <!-- Enlace al archivo de estilos CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Inclusión de la biblioteca html5-qrcode desde un CDN -->
     <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 </head>
 <body>
@@ -12,7 +14,9 @@
         <h1>Escáner de Códigos QR</h1>
     </header>
     <main>
+        <!-- Contenedor donde se renderizará el escáner -->
         <div id="reader" class="qr-reader"></div>
+        <!-- Sección para mostrar el resultado del escaneo -->
         <div id="result" class="result-container">
             <h2>Resultado del Escaneo:</h2>
             <p id="scan-result">Aún no se ha escaneado ningún código.</p>
@@ -21,6 +25,7 @@
     <footer>
         <p>Desarrollado con ♥ usando <a href="https://github.com/mebjas/html5-qrcode" target="_blank">html5-qrcode</a></p>
     </footer>
+    <!-- Enlace al archivo de scripts JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
