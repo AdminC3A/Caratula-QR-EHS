@@ -9,6 +9,7 @@ function sendPost() {
 
     fetch(postUrl, {
         method: "POST",
+        mode: "no-cors", // Permitir envío sin verificar la respuesta
         headers: {
             "Content-Type": "application/json",
         },
@@ -18,20 +19,15 @@ function sendPost() {
             timestamp: timestamp,
         }),
     })
-        .then((response) => response.json())
-        .then((data) => {
-            if (data.success) {
-                document.getElementById("result").innerText = "Envío exitoso: Registro guardado.";
-                console.log("Registro guardado correctamente:", data);
-            } else {
-                document.getElementById("result").innerText = "Error en el envío.";
-                console.error("Error en el registro:", data.error);
-            }
-        })
-        .catch((error) => {
-            document.getElementById("result").innerText = "Error al conectar.";
-            console.error("Error en el POST:", error);
-        });
+    .then(() => {
+        // Mostrar mensaje indicando que la solicitud fue enviada
+        document.getElementById("result").innerText = "Registro enviado. Verifica en Google Sheets.";
+    })
+    .catch((error) => {
+        // Mostrar error en caso de fallo
+        document.getElementById("result").innerText = "Error al conectar.";
+        console.error("Error al enviar la solicitud:", error);
+    });
 }
 
 // Agregar evento al botón
