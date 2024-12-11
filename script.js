@@ -1,5 +1,5 @@
 // URL del Google Apps Script
-const postUrl = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+const postUrl = "https://script.google.com/macros/s/AKfycbxt4f9rXduGzVrxXbdGXTpOif-EOcAmyf21AD6h20FlDvh-foSxUEtXbzJTAITXtRL3/exec";
 
 // Función para enviar el POST
 function sendPost() {
