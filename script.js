@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const responseMessage = document.getElementById("responseMessage");
 
     // URL de tu Web App en Google Apps Script
-    const webAppURL = "https://script.google.com/macros/library/d/1uojcc6hfW_o5SetWGnIPvGW2aBfND31-yq2F2esBQ4Fz2n0HrlA24-mt/3"; // Reemplázala con la URL del Web App generado
+    const webAppURL = "URL_DE_TU_WEB_APP"; // Reemplázala con la URL de tu Web App
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault(); // Evita el envío del formulario por defecto
@@ -20,31 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             // Enviar los datos al Web App
-           const response = await fetch(webAppURL, {
-    method: "POST",
-    mode: "no-cors", // Configuración para evitar bloqueo por CORS
-    headers: {
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-});
+            await fetch(webAppURL, {
+                method: "POST",
+                mode: "no-cors", // Configuración para evitar problemas de CORS
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
 
-
-            // Validar si la respuesta es del tipo JSON
-            if (!response.ok) {
-                throw new Error(`Error HTTP: ${response.status}`);
-            }
-
-            const result = await response.json();
-
-            // Manejar la respuesta del servidor
-            if (result.status === "success") {
-                responseMessage.textContent = "Datos enviados correctamente a Google Sheets.";
-                responseMessage.style.color = "green";
-            } else {
-                responseMessage.textContent = `Error: ${result.message}`;
-                responseMessage.style.color = "red";
-            }
+            // Mensaje de confirmación
+            responseMessage.textContent = "Datos enviados correctamente. Verifica en Google Sheets.";
+            responseMessage.style.color = "green";
         } catch (error) {
             console.error("Error al enviar los datos:", error);
             responseMessage.textContent = "No se pudo enviar la información. Revisa la consola.";
