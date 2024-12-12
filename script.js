@@ -20,13 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             // Enviar los datos al Web App
-            const response = await fetch(webAppURL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
+           const response = await fetch(webAppURL, {
+    method: "POST",
+    mode: "no-cors", // Configuración para evitar bloqueo por CORS
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+});
+
 
             // Validar si la respuesta es del tipo JSON
             if (!response.ok) {
