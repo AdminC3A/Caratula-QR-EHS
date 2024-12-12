@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const responseMessage = document.getElementById("responseMessage");
 
     // URL de tu Web App en Google Apps Script
-    const webAppURL = "https://script.google.com/a/macros/casatresaguas.com/s/AKfycbxj-6qRSXzClYq8_44kTjtEU8NdP8Eyr-k4igHv9UQ8W5TBSc-urrNQIUFA6zFbfTxG1g/exec"; // Reemplázala con la URL del Web App generado
+    const webAppURL = "https://script.google.com/macros/s/AKfycbxTRHSTYWJu0nRwUgWSNM5sKkFTGVyn1YxQvKpfPL9rIjuCXFtf96n8RfVQClMlPhxHaw/exec"; // Reemplázala con la URL del Web App generado
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault(); // Evita el envío del formulario por defecto
