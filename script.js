@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const responseMessage = document.getElementById("responseMessage");
 
     // URL de tu Web App en Google Apps Script
-    const webAppURL = "https://script.google.com/macros/library/d/1uojcc6hfW_o5SetWGnIPvGW2aBfND31-yq2F2esBQ4Fz2n0HrlA24-mt/3"; // Reemplázala con la URL de tu Web App
+    const webAppURL = "https://script.google.com/macros/s/AKfycbxTRHSTYWJu0nRwUgWSNM5sKkFTGVyn1YxQvKpfPL9rIjuCXFtf96n8RfVQClMlPhxHaw/exec"; // Reemplázala con la URL de tu Web App
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault(); // Evita el envío del formulario por defecto
