@@ -1,65 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Generador de Credenciales</title>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.0.0/qrcode.min.js"></script>
-    <style>
-        #contenedor-qr {
-            text-align: center;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de POST</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Estilos básicos -->
 </head>
 <body>
-    <form id="formulario">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
-        <label for="puesto">Puesto:</label>
-        <input type="text" id="puesto" required>
-        <label for="empresa">Empresa:</label>
-        <input type="text" id="empresa" required>
-        <label for="codigoQR">Código QR:</label>
-        <input type="text" id="codigoQR" required>
-        <button type="button" id="generarCredencial">Generar Credencial</button>
-    </form>
-    <div id="contenedor-qr"></div>
+    <header>
+        <h1>Prueba de Envío de Datos</h1>
+    </header>
+    <main>
+        <form id="dataForm">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+            
+            <label for="puesto">Puesto:</label>
+            <input type="text" id="puesto" name="puesto" placeholder="Ingresa tu puesto" required>
+            
+            <label for="nss">NSS (Número de Seguridad Social):</label>
+            <input type="text" id="nss" name="nss" placeholder="Ingresa tu NSS" required>
+            
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            
+            <label for="empresa">Empresa:</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Ingresa el nombre de la empresa" required>
+            
+            <label for="codigoQR">Código QR:</label>
+            <input type="text" id="codigoQR" name="codigoQR" placeholder="Ingresa el código QR generado" required>
 
-    <script>
-        const generarCredencialBtn = document.getElementById('generarCredencial');
-        generarCredencialBtn.addEventListener('click', () => {
-            const nombre = document.getElementById('nombre').value;
-            const puesto = document.getElementById('puesto').value;
-            const empresa = document.getElementById('empresa').value;
-            const codigoQR = document.getElementById('codigoQR').value;
-
-            // Construir el texto del código QR (puedes personalizar esto)
-            const textoQR = `Nombre: ${nombre}\nPuesto: ${puesto}\nEmpresa: ${empresa}`;
-
-            // Crear un elemento canvas para el código QR
-            const qrCanvas = document.createElement('canvas');
-            qrCanvas.id = 'qr-canvas';
-            document.body.appendChild(qrCanvas);
-
-            // Generar el código QR
-            new QRCode(qrCanvas, {
-                text: textoQR,
-                width: 200,
-                height: 200,
-                colorDark : "#000000",
-                colorLight : "#ffffff",
-            });
-
-            // Mostrar el canvas con el código QR
-            const contenedorQR = document.getElementById('contenedor-qr');
-            contenedorQR.innerHTML = ''; // Limpiar el contenedor antes de agregar el nuevo QR
-            contenedorQR.appendChild(qrCanvas);
-
-            // Opción para descargar el código QR
-            const downloadLink = document.createElement('a');
-            downloadLink.href = qrCanvas.toDataURL();
-            downloadLink.download = 'codigoQR.png';
-            downloadLink.textContent = 'Descargar QR';
-            contenedorQR.appendChild(downloadLink);
-        });
-    </script>
+            <button type="submit">Enviar Datos</button>
+        </form>
+        <p id="responseMessage"></p>
+    </main>
+    <script src="script.js"></script> <!-- Lógica en JavaScript -->
 </body>
 </html>
