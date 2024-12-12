@@ -28,8 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(data),
             });
 
-            // Manejar la respuesta del servidor
+            // Validar si la respuesta es del tipo JSON
+            if (!response.ok) {
+                throw new Error(`Error HTTP: ${response.status}`);
+            }
+
             const result = await response.json();
+
+            // Manejar la respuesta del servidor
             if (result.status === "success") {
                 responseMessage.textContent = "Datos enviados correctamente a Google Sheets.";
                 responseMessage.style.color = "green";
