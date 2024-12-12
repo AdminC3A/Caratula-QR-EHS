@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generar QR</title>
-    <script src="js/qrcode.min.js"></script> <!-- Enlace al archivo local -->
+    <title>Generador de Credenciales</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.0.0/qrcode.min.js"></script>
 </head>
 <body>
-    <h1>Prueba Generar Código QR</h1>
-    <div id="qrcode" style="margin: 20px;"></div>
+    <button id="generarCredencial">Generar Credencial</button>
+
     <script>
-        // Generar el código QR con texto de prueba
-        console.log("Iniciando generación de QR...");
-        const qrContainer = document.getElementById("qrcode");
-        try {
-            new QRCode(qrContainer, {
-                text: "Texto de prueba para QR",
+        const generarCredencialBtn = document.getElementById('generarCredencial');
+        generarCredencialBtn.addEventListener('click', () => {
+            const nombre = document.getElementById('nombre').value;
+            const puesto = document.getElementById('puesto').value;
+            // ... otros campos
+            const codigoQR = document.getElementById('codigoQR').value;
+
+            // Crear un elemento canvas para el código QR
+            const qrCanvas = document.createElement('canvas');
+            qrCanvas.id = 'qr-canvas';
+            document.body.appendChild(qrCanvas);
+
+            // Generar el código QR
+            new QRCode(qrCanvas, {
+                text: codigoQR,
                 width: 150,
                 height: 150,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
             });
-            console.log("Código QR generado correctamente.");
-        } catch (error) {
-            console.error("Error al generar el código QR:", error);
-        }
+
+            // Mostrar el canvas con el código QR (puedes personalizar la ubicación)
+            const contenedorQR = document.getElementById('contenedor-qr'); // Asume que tienes un div con este ID
+            contenedorQR.appendChild(qrCanvas);
+        });
     </script>
 </body>
 </html>
