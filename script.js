@@ -1,34 +1,46 @@
-// URL del Google Apps Script
-const postUrl = "https://script.google.com/macros/s/AKfycbwSSYR7qq4vHyvqPOV_ThS2cWSGfitklgGE1_cnJx4BnHq-Z8rL_NhaYJ9nQSLObOn8/exec";
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("dataForm");
+    const responseMessage = document.getElementById("responseMessage");
 
-// Función para enviar el POST
-function sendPost() {
-    const qrCode = "A7DhWBBm"; // Código QR simulado
-    const result = "Permitido"; // Resultado simulado
-    const timestamp = new Date().toISOString();
+    // URL de tu Web App en Google Apps Script
+    const webAppURL = "URL_DE_TU_WEB_APP"; // Reemplázala con la URL del Web App generado
 
-    fetch(postUrl, {
-        method: "POST",
-        mode: "no-cors", // Permitir envío sin verificar la respuesta
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            qrCode: qrCode,
-            result: result,
-            timestamp: timestamp,
-        }),
-    })
-    .then(() => {
-        // Mostrar mensaje indicando que la solicitud fue enviada
-        document.getElementById("result").innerText = "Registro enviado. Verifica en Google Sheets.";
-    })
-    .catch((error) => {
-        // Mostrar error en caso de fallo
-        document.getElementById("result").innerText = "Error al conectar.";
-        console.error("Error al enviar la solicitud:", error);
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault(); // Evita el envío del formulario por defecto
+
+        // Capturar los datos del formulario
+        const data = {
+            Nombre: document.getElementById("nombre").value.trim(),
+            Puesto: document.getElementById("puesto").value.trim(),
+            NSS: document.getElementById("nss").value.trim(),
+            FechaNacimiento: document.getElementById("fechaNacimiento").value.trim(),
+            Empresa: document.getElementById("empresa").value.trim(),
+            CodigoQR: document.getElementById("codigoQR").value.trim(),
+        };
+
+        try {
+            // Enviar los datos al Web App
+            const response = await fetch(webAppURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            // Manejar la respuesta del servidor
+            const result = await response.json();
+            if (result.status === "success") {
+                responseMessage.textContent = "Datos enviados correctamente a Google Sheets.";
+                responseMessage.style.color = "green";
+            } else {
+                responseMessage.textContent = `Error: ${result.message}`;
+                responseMessage.style.color = "red";
+            }
+        } catch (error) {
+            console.error("Error al enviar los datos:", error);
+            responseMessage.textContent = "No se pudo enviar la información. Revisa la consola.";
+            responseMessage.style.color = "red";
+        }
     });
-}
-
-// Agregar evento al botón
-document.getElementById("sendPost").addEventListener("click", sendPost);
+});
