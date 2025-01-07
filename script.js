@@ -1,8 +1,8 @@
 function navigateTo(process) {
     const routes = {
-        entradas: "https://turepositorio.com/entradas", // Cambia a la URL real
-        salidas: "https://turepositorio.com/salidas",   // Cambia a la URL real
-        credenciales: "https://turepositorio.com/credenciales", // Cambia a la URL real
+        entradas: "https://3aguasqracceso.netlify.app", // Cambia a la URL real
+        salidas: "https://exitc3aeleqrquivira.netlify.app",   // Cambia a la URL real
+        credenciales: "https://idcasatresaguas.netlify.app", // Cambia a la URL real
         reportes: "https://turepositorio.com/reportes"  // Cambia a la URL real
     };
 
