@@ -3,37 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba de POST</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Estilos básicos -->
+    <title>Carátula - Sistema QR</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Prueba de Envío de Datos</h1>
-    </header>
-    <main>
-        <form id="dataForm">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
-            
-            <label for="puesto">Puesto:</label>
-            <input type="text" id="puesto" name="puesto" placeholder="Ingresa tu puesto" required>
-            
-            <label for="nss">NSS (Número de Seguridad Social):</label>
-            <input type="text" id="nss" name="nss" placeholder="Ingresa tu NSS" required>
-            
-            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-            
-            <label for="empresa">Empresa:</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Ingresa el nombre de la empresa" required>
-            
-            <label for="codigoQR">Código QR:</label>
-            <input type="text" id="codigoQR" name="codigoQR" placeholder="Ingresa el código QR generado" required>
+    <div class="container">
+        <h1>Sistema de Gestión QR</h1>
+        <p>Selecciona una opción:</p>
 
-            <button type="submit">Enviar Datos</button>
-        </form>
-        <p id="responseMessage"></p>
-    </main>
-    <script src="script.js"></script> <!-- Lógica en JavaScript -->
+        <div class="buttons">
+            <button onclick="navigateTo('entradas')">Gestión de Entradas</button>
+            <button onclick="navigateTo('salidas')">Gestión de Salidas</button>
+            <button onclick="navigateTo('credenciales')">Gestión de Credenciales</button>
+            <button onclick="navigateTo('reportes')">Reportes</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
