@@ -56,3 +56,14 @@ button:hover {
     color: #aaa; /* Color gris suave */
     font-style: italic;
 }
+.logo {
+    text-align: center;
+    margin-bottom: 20px; /* Separación del título y las opciones */
+}
+
+.logo img {
+    max-width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar */
+}
