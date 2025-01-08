@@ -3,7 +3,7 @@ function navigateTo(process) {
         entradas: "https://3aguasqracceso.netlify.app", // Cambia a la URL real
         salidas: "https://exitc3aeleqrquivira.netlify.app",   // Cambia a la URL real
         credenciales: "https://idcasatresaguas.netlify.app", // Cambia a la URL real
-        reportes: "https://turepositorio.com/reportes"  // Cambia a la URL real
+        reportes: "https://c3a-reportes-bos.netlify.app"  // Cambia a la URL real
     };
 
     // Redirigir al proceso correspondiente
