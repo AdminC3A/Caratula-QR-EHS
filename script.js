@@ -1,6 +1,6 @@
 function navigateTo(process) {
     const routes = {
-        entradas: "https://3aguasqracceso.netlify.app", // Cambia a la URL real
+        entradas: "https://cta-qracceso2026-2565.netlify.app/", // Cambia a la URL real
         salidas: "https://exitc3aeleqrquivira.netlify.app",   // Cambia a la URL real
         credenciales: "https://idcasatresaguas.netlify.app", // Cambia a la URL real
         reportes: "https://c3a-reportes-bos.netlify.app"  // Cambia a la URL real
@@ -13,5 +13,6 @@ function navigateTo(process) {
         console.error("Ruta no encontrada:", process);
     }
 }
+
 
 
